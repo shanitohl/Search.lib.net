@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FF519D7F-B4A4-46B2-B189-1AB7DC6C49AF}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Search.lib.net</RootNamespace>
-    <AssemblyName>Search.lib.net</AssemblyName>
+    <ProjectGuid>{2580F4DA-A528-4E5B-B1D7-8680CAE973DC}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Search.lib.test</RootNamespace>
+    <AssemblyName>Search.lib.test</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,13 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\CompanieModel.cs" />
-    <Compile Include="Models\Search\OrderByModel.cs" />
-    <Compile Include="Models\Search\PagingModel.cs" />
-    <Compile Include="Models\Search\SearchCriteriaFilterModel.cs" />
-    <Compile Include="Models\Search\SearchCriteriaModel.cs" />
-    <Compile Include="SearchProvider.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Search.lib.net\Search.lib.net.csproj">
+      <Project>{ff519d7f-b4a4-46b2-b189-1ab7dc6c49af}</Project>
+      <Name>Search.lib.net</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
